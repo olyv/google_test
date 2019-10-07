@@ -8,11 +8,12 @@
 ### To run tests
 
 Tests can be executed in one of the browsers: Cheome or Firefox.
+
 To launch tests:
 1) execute maven command `mvn -Dbrowser.name=FIREFOX clean test` (use `-Dbrowser.name=CHROME`) to run test in Chrome
 
 or
 
-2) run tests from your favourite IDE (remember to specify -Dbrowser.name property)
+2) run tests from your favourite IDE (remember to specify -Dbrowser.name property, otherwise browser will be defaulted to Chrome)
 
 
