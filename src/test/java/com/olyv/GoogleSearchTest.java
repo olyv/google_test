@@ -17,7 +17,7 @@ public class GoogleSearchTest {
 
     private static final String SOME_WORD = "wortschatz";
     private static final String SOME_SITE_TO_SEARCH = "https://play.google.com";
-    private final Logger log = LoggerFactory.getLogger(GoogleSearchTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GoogleSearchTest.class);
     private RemoteWebDriver driver;
     private HomePage homePage;
     private SearchResultsPage searchResultsPage;
@@ -27,7 +27,7 @@ public class GoogleSearchTest {
 
     @Before
     public void setUp() {
-        log.info("Container is running at {}", container.getVncAddress());
+        LOG.info("Container is running at {}", container.getVncAddress());
         driver = container.getWebDriver();
         driver.manage().window().maximize();
     }

@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-class SearchInput extends PageObject {
+class SearchInput extends AbstractPageObject {
 
     @FindBy(css = "input[name='q'][type='text']")
-    private WebElement searchInput;
+    private WebElement searchField;
 
     @FindBy(css = ".suggestions-inner-container")
     private List<WebElement> suggestedOptions;
@@ -21,12 +21,10 @@ class SearchInput extends PageObject {
     }
 
     void enterText(String text) {
-        searchInput.sendKeys(text);
+        searchField.sendKeys(text);
     }
 
     List<WebElement> getListOfSuggestedOptions() {
-//        var wait = new WebDriverWait(driver, 30);
-//        return wait.until(refreshed(visibilityOfAllElements(suggestedOptions)));
         return suggestedOptions;
     }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public class SearchResultsPage extends PageObject {
+public class SearchResultsPage extends AbstractPageObject {
 
     @FindBy(css = ".r > a:first-child")
     private List<WebElement> searchResultsLinks;
@@ -23,13 +23,13 @@ public class SearchResultsPage extends PageObject {
 
     public Boolean isWordInPageTitle(String word) {
         var waitForPageTitleSeconds = 15;
-        WebDriverWait wait = new WebDriverWait(driver, waitForPageTitleSeconds);
+        var wait = new WebDriverWait(driver, waitForPageTitleSeconds);
         return wait.until(ExpectedConditions.titleContains(word));
     }
 
     public List<String> getSearchResultsLinks() {
         return searchResultsLinks.stream()
-                .map(el -> el.getAttribute("href"))
+                .map(element -> element.getAttribute("href"))
                 .collect(toList());
     }
 }

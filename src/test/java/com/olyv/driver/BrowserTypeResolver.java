@@ -7,14 +7,14 @@ import javax.annotation.Nullable;
 
 class BrowserTypeResolver {
 
-    private final Logger log = LoggerFactory.getLogger(BrowserTypeResolver.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BrowserTypeResolver.class);
 
     BrowserType getType() {
         var property = getProperty();
         BrowserType browserType;
         if(property == null) {
             browserType = BrowserType.CHROME;
-            log.warn("Defaulting browser to Chrome");
+            LOG.warn("Defaulting browser to Chrome");
         } else {
             browserType = BrowserType.valueOf(property);
         }
@@ -24,7 +24,7 @@ class BrowserTypeResolver {
     @Nullable
     private String getProperty() {
         var property = System.getProperty("browser.name");
-        log.info("${browser.name} property was read as {}", property);
+        LOG.info("${browser.name} property was read as {}", property);
         return property;
     }
 }

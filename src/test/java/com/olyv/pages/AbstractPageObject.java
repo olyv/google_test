@@ -2,11 +2,11 @@ package com.olyv.pages;
 
 import org.openqa.selenium.WebDriver;
 
-abstract class PageObject {
+abstract class AbstractPageObject {
 
     WebDriver driver;
 
-    PageObject(WebDriver driver) {
+    AbstractPageObject(WebDriver driver) {
         this.driver = driver;
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 import static java.util.function.Predicate.not;
 import static java.util.stream.Collectors.toList;
 
-public class HomePage extends PageObject {
+public class HomePage extends AbstractPageObject {
 
     private final static String HOME_PAGE_URL = "http://google.com";
     private SearchInput searchInput;
